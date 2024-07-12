@@ -1,0 +1,20 @@
+# Schritt 1: Verwenden eines offiziellen Node.js-Images als Basis
+FROM node:16
+
+# Schritt 2: Erstellen eines Arbeitsverzeichnisses
+WORKDIR /usr/src/app
+
+# Schritt 3: Kopieren von package.json und package-lock.json
+COPY package*.json ./
+
+# Schritt 4: Installieren der Abhängigkeiten
+RUN npm install
+
+# Schritt 5: Kopieren des restlichen Anwendungscodes
+COPY . .
+
+# Schritt 6: Exponieren des Ports
+EXPOSE 3000
+
+# Schritt 7: Definieren des Startbefehls
+CMD ["node", "src/server-stempeluhr.js"]
