@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const mongoose = require('mongoose');
 const Employee = require('./Employee'); // Importieren Sie Ihr Mongoose-Modell
 
@@ -11,7 +12,7 @@ const host = 'localhost';
 mongoose.connect('mongodb://localhost:27017/employees');
 
 app.use(cors());
-app.use(express.static('public/stempeluhr'));
+app.use(express.static(path.join(__dirname, 'public', 'stempeluhr')));
 app.use(express.json());
 
 app.get('/timestamp', async (req, res) => {
