@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 5000
 
 # Schritt 7: Definieren des Startbefehls
-CMD ["node", "src/server-application.js"]
+CMD ["sh", "-c", "node src/importEmployees.js && exec node src/server-application.js"]
