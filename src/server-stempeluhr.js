@@ -9,7 +9,7 @@ const port = 3000;
 const host = 'localhost';
 
 // Verbindung zur MongoDB herstellen
-mongoose.connect('mongodb://localhost:27017/employees');
+mongoose.connect('mongodb://mongodb:27017/employees');
 
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'public', 'stempeluhr')));

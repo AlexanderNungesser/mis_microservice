@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Employee = require('./Employee'); // Importieren Sie Ihr Mongoose-Modell
 
 // Verbindung zur MongoDB herstellen
-mongoose.connect('mongodb://localhost:27017/employees');
+mongoose.connect('mongodb://mongodb:27017/employees');
 
 const employeesData = [
     { name: "Max Mustermann", personalNumber: 12345, chipNumber: 54321 },
